@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+
+int main(){
+    Queue<int> fila;
+
+    if(fila.enqueue(10)){
+        printf("Enqueue (10) Realizado!\n");
+    }
+
+    if(fila.enqueue(20)){
+        printf("Enqueue (20) Realizado!\n");
+    }
+ 
+    int removido = fila.dequeue();
+
+    printf("Dequeue %d\n", removido);
+
+    fila.isEmpty() ? printf("Fila vazia!\n") : printf("Fila não vazia!\n");
+
+    int removido2 = fila.dequeue();
+
+    printf("Dequeue %d\n", removido2);
+    fila.isEmpty() ? printf("Fila vazia!\n") : printf("Fila não vazia!\n");
+
+
+    return 0;
+}

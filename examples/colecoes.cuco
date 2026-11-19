@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    List<int> lista;
+    Queue<int> fila;
+    Stack<int> pilha;
+
+    for (int valor = 10; valor <= 30; valor += 10) {
+        if (!lista.add(valor) || !fila.enqueue(valor) || !pilha.push(valor)) {
+            fprintf(stderr, "Falha ao inserir um valor.\n");
+            free(lista);
+            free(fila);
+            free(pilha);
+            return 1;
+        }
+    }
+
+    printf("Lista, índice 1: %d\n", lista.get(1));
+    printf("Fila, primeiro a sair: %d\n", fila.dequeue());
+    printf("Pilha, primeiro a sair: %d\n", pilha.pop());
+
+    free(lista);
+    free(fila);
+    free(pilha);
+    return 0;
+}

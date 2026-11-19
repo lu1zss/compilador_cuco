@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Pessoa {
+    int id;
+    int idade;
+} Pessoa;
+
+int main(void) {
+    Stack<Pessoa> cadastros;
+
+    Pessoa pessoa1 = {.id = 1, .idade = 10};
+    Pessoa pessoa2 = {.id = 2, .idade = 25};
+
+    if (!cadastros.push(pessoa1) || !cadastros.push(pessoa2)) {
+        fprintf(stderr, "Falha ao empilhar cadastro.\n");
+        free(cadastros);
+        return 1;
+    }
+
+    Pessoa topo = cadastros.peek();
+    printf("Topo: ID %d, idade %d\n", topo.id, topo.idade);
+    printf("Quantidade após peek: %zu\n", cadastros.size());
+
+    while (!cadastros.isEmpty()) {
+        Pessoa removida = cadastros.pop();
+        printf("Removida: ID %d, idade %d\n", removida.id, removida.idade);
+    }
+
+    free(cadastros);
+    return 0;
+}

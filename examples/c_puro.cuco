@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+    /* Os vetores representam as três coleções antes da primeira remoção. */
+    int lista[] = {10, 20, 30};
+    int fila[] = {10, 20, 30};
+    int pilha[] = {10, 20, 30};
+    int inicio_fila = 0;
+    int tamanho_pilha = 3;
+
+    printf("Lista, índice 1: %d\n", lista[1]);
+    printf("Fila, primeiro a sair: %d\n", fila[inicio_fila++]);
+    printf("Pilha, primeiro a sair: %d\n", pilha[--tamanho_pilha]);
+
+    return 0;
+}

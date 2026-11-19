@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    List<int> lista<10>;
+
+    lista.insert(0, 10);
+    lista.insert(1, 20);
+    lista.insert(2, 30);
+
+    lista.insert(1, 50);
+
+    for (size_t i = 0; i < lista.size(); i++) {
+        printf("Elemento %zu: %d\n", i, lista.get(i));
+    }
+
+    free(lista);
+    return 0;
+}

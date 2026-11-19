@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    Stack<int> pilha;
+    pilha.push(10);
+    pilha.push(20);
+    pilha.push(30);
+
+    printf("%d removido\n", pilha.pop());
+    printf("Elemento do topo após remoção: %d\n", pilha.peek());
+    free(pilha);
+    return 0;
+}
